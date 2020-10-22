@@ -1,7 +1,7 @@
 """
 Definition of urls for BasicProject.
 """
-
+"""
 from datetime import datetime
 from django.urls import path
 from django.contrib import admin
@@ -28,3 +28,12 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
     path('admin/', admin.site.urls),
 ]
+"""
+from django.conf.urls import include, url
+import HelloDjangoApp.views
+
+urlpatterns = [
+    url(r'^$', HelloDjangoApp.views.index, name='index'),
+    url(r'^home$', HelloDjangoApp.views.index, name='home'),
+]
+
